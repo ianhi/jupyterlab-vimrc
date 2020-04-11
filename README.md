@@ -2,10 +2,24 @@
 
 ![Github Actions Status](https://github.com/ianhi/jupyterlab-vimrc/workflows/Build/badge.svg)
 
-add a basic vimrc to jupyterlab
+add a basic vimrc to jupyterlab  
 
+Currently supports these commands:
+```
+imap
+nmap
+vmap
+```
 
-
+you can modify the mapping by editing the settings using Settings > Advanced Settings Editor (Ctrl+,) and selecting the settings for `vimrc`. Commands are defined as arrays with the syntax:
+[lhs, rhs]. So map `ii` to `<Esc>` in insert mode add the following to the settings:
+```json
+{
+"imap": [
+    ["ii","<Esc>"]
+    ],
+}
+```
 ## Requirements
 
 * JupyterLab >= 2.0
