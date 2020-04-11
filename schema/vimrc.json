@@ -20,6 +20,24 @@
       "title": "vmap commands",
       "description": "[lhs, rhs]",
       "default": [[]]
+    },
+    "inoremap": {
+      "type": "array",
+      "title": "inoremap commands",
+      "description": "[lhs, rhs]",
+      "default": [[]]
+    },
+    "nnoremap": {
+      "type": "array",
+      "title": "nnoremap commands",
+      "description": "[lhs, rhs]",
+      "default": [[]]
+    },
+    "vnoremap": {
+      "type": "array",
+      "title": "vnoremap commands",
+      "description": "[lhs, rhs]",
+      "default": [[]]
     }
   }
 }

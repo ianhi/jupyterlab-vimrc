@@ -9,6 +9,9 @@ import {
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
 
 const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
+
+const NOREMAP_LINK =
+  'https://github.com/ianhi/jupyterlab-vimrc/blob/master/README.md';
 /**
  * Initialization data for the jupyterlab-vimrc extension.
  */
@@ -17,9 +20,6 @@ const extension: JupyterFrontEndPlugin<void> = {
   autoStart: true,
   requires: [ISettingRegistry],
   activate: (app: JupyterFrontEnd, settings: ISettingRegistry) => {
-    //let imap = [[]]
-    //let nmap: [[]]
-    //let vmap = string[[]]
     const cm = CodeMirror as any;
 
     /**
@@ -52,6 +52,45 @@ const extension: JupyterFrontEndPlugin<void> = {
       vmap.forEach((arr: string[]) => {
         if (arr[0] && arr[1]) {
           cm.Vim.map(arr[0], arr[1], 'visual');
+        }
+      });
+
+      const inoremap = setting.get('inoremap').composite as string[][];
+      inoremap.forEach((arr: string[]) => {
+        if (arr[0] && arr[1]) {
+          if (!cm.Vim.noremap(arr[0], arr[1], 'insert')) {
+            console.error(
+              `inoremap ${arr[0]} ${
+                arr[1]
+              } failed\nSee dicussion at ${NOREMAP_LINK}`
+            );
+          }
+        }
+      });
+
+      const nnoremap = setting.get('nnoremap').composite as string[][];
+      nnoremap.forEach((arr: string[]) => {
+        if (arr[0] && arr[1]) {
+          if (!cm.Vim.noremap(arr[0], arr[1], 'normal')) {
+            console.error(
+              `nnoremap ${arr[0]} ${
+                arr[1]
+              } failed\nSee dicussion at ${NOREMAP_LINK}`
+            );
+          }
+        }
+      });
+
+      const vnoremap = setting.get('vnoremap').composite as string[][];
+      vnoremap.forEach((arr: string[]) => {
+        if (arr[0] && arr[1]) {
+          if (!cm.Vim.noremap(arr[0], arr[1], 'visual')) {
+            console.error(
+              `vnoremap ${arr[0]} ${
+                arr[1]
+              } failed\nSee dicussion at ${NOREMAP_LINK}`
+            );
+          }
         }
       });
     }
