@@ -11,7 +11,7 @@ import { ISettingRegistry } from '@jupyterlab/settingregistry';
 const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
 
 const NOREMAP_LINK =
-  'https://github.com/ianhi/jupyterlab-vimrc/blob/master/README.md';
+  'https://github.com/ianhi/jupyterlab-vimrc/blob/master/README.md#*-noremap-caveat';
 /**
  * Initialization data for the jupyterlab-vimrc extension.
  */

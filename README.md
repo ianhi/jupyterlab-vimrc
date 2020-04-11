@@ -34,8 +34,8 @@ inoremap*
 nnoremap*
 vnoremap*
 ```
-
-<span style="font-size:larger;"><b>*</b></span> The noremap commands are also availiable but come with several caveats:
+### <span style="font-size:larger;"><b>*</b></span> noremap caveat
+The noremap commands are also availiable but come with several caveats:
 
 The comment for the `noremap` function in [`codemirror/keymap/vim.js`](https://github.com/codemirror/CodeMirror/blob/b2d26b4ccb1d0994ae84d18ad8b84018de176da9/keymap/vim.js#L764-L766) says the following:
 > Non-recursive map function.  
