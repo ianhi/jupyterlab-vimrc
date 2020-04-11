@@ -1,0 +1,25 @@
+{
+  "title": "vimrc",
+  "description": "Settings to be applied to codemirror vim mode",
+  "type": "object",
+  "properties": {
+    "imap": {
+      "type": "array",
+      "title": "imap commands",
+      "description": "[lhs, rhs]",
+      "default": [["ii", "<Esc>"]]
+    },
+    "nmap": {
+      "type": "array",
+      "title": "nmap commands",
+      "description": "[lhs, rhs]",
+      "default": [[]]
+    },
+    "vmap": {
+      "type": "array",
+      "title": "vmap commands",
+      "description": "[lhs, rhs]",
+      "default": [[]]
+    }
+  }
+}
