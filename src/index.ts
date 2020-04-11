@@ -29,7 +29,10 @@ const extension: JupyterFrontEndPlugin<void> = {
      */
     function loadSetting(setting: ISettingRegistry.ISettings): void {
       // clear any previously set settings
-      cm.Vim.mapclear();
+      cm.Vim.mapclear('normal');
+      cm.Vim.mapclear('visual');
+      cm.Vim.mapclear('insert');
+
       // Read the settings and set values in codemirror
       const imap = setting.get('imap').composite as string[][];
       imap.forEach((arr: string[]) => {
