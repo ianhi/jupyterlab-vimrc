@@ -18,11 +18,10 @@ You can modify the contents of this psuedo vimrc by editing the settings using S
 "imap": 
     [
         ["ii", "<Esc>"],
-        ["cp", "yap<S-}>p"]
     ],
 }
 ```
-I original saw the `cp` command using `nnoremap`, but as discussed below there are some large caveats with using the noremap commands for codemirror vim mode.
+See the [Examples](EXAMPLES.md) for other premade settings files such as `hjkl` -> `jkl;`
 
 ## Supported Commands
 Currently supports these commands:
@@ -66,7 +65,7 @@ The `jlpm` command is JupyterLab's pinned version of
 # Move to jupyterlab-vimrc directory
 
 # Install dependencies
-jlpm
+jlpm install
 # Build Typescript source
 jlpm build
 # Link your development version of the extension with JupyterLab
