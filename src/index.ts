@@ -10,8 +10,6 @@ import { ISettingRegistry } from '@jupyterlab/settingregistry';
 
 const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
 
-const NOREMAP_LINK =
-  'https://github.com/ianhi/jupyterlab-vimrc/blob/master/README.md#-noremap-caveat';
 /**
  * Initialization data for the jupyterlab-vimrc extension.
  */
@@ -58,39 +56,21 @@ const extension: JupyterFrontEndPlugin<void> = {
       const inoremap = setting.get('inoremap').composite as string[][];
       inoremap.forEach((arr: string[]) => {
         if (arr[0] && arr[1]) {
-          if (!cm.Vim.noremap(arr[0], arr[1], 'insert')) {
-            console.error(
-              `inoremap ${arr[0]} ${
-                arr[1]
-              } failed\nSee dicussion at ${NOREMAP_LINK}`
-            );
-          }
+          cm.Vim.noremap(arr[0], arr[1], 'insert'); 
         }
       });
 
       const nnoremap = setting.get('nnoremap').composite as string[][];
       nnoremap.forEach((arr: string[]) => {
         if (arr[0] && arr[1]) {
-          if (!cm.Vim.noremap(arr[0], arr[1], 'normal')) {
-            console.error(
-              `nnoremap ${arr[0]} ${
-                arr[1]
-              } failed\nSee dicussion at ${NOREMAP_LINK}`
-            );
-          }
+          cm.Vim.noremap(arr[0], arr[1], 'normal');
         }
       });
 
       const vnoremap = setting.get('vnoremap').composite as string[][];
       vnoremap.forEach((arr: string[]) => {
         if (arr[0] && arr[1]) {
-          if (!cm.Vim.noremap(arr[0], arr[1], 'visual')) {
-            console.error(
-              `vnoremap ${arr[0]} ${
-                arr[1]
-              } failed\nSee dicussion at ${NOREMAP_LINK}`
-            );
-          }
+          cm.Vim.noremap(arr[0], arr[1], 'visual'); 
         }
       });
     }
