@@ -56,7 +56,7 @@ const extension: JupyterFrontEndPlugin<void> = {
       const inoremap = setting.get('inoremap').composite as string[][];
       inoremap.forEach((arr: string[]) => {
         if (arr[0] && arr[1]) {
-          cm.Vim.noremap(arr[0], arr[1], 'insert'); 
+          cm.Vim.noremap(arr[0], arr[1], 'insert');
         }
       });
 
@@ -70,7 +70,7 @@ const extension: JupyterFrontEndPlugin<void> = {
       const vnoremap = setting.get('vnoremap').composite as string[][];
       vnoremap.forEach((arr: string[]) => {
         if (arr[0] && arr[1]) {
-          cm.Vim.noremap(arr[0], arr[1], 'visual'); 
+          cm.Vim.noremap(arr[0], arr[1], 'visual');
         }
       });
     }
