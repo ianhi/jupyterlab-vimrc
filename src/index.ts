@@ -6,7 +6,7 @@ import {
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 
-import { ISettingRegistry } from '@jupyterlab/settingregistry';
+import { ISettingRegistry } from '@jupyterlab/coreutils';
 
 const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
 
