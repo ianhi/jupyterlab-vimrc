@@ -3,16 +3,23 @@
 ![Github Actions Status](https://github.com/ianhi/jupyterlab-vimrc/workflows/Build/badge.svg)
 
 add a basic vimrc to jupyterlab  
+
 ## Install
 
 ```bash
 jupyter labextension install jupyterlab-vimrc
 ```
 
+or for jupyterlab=1
+```bash
+jupyter labextension install jupyterlab-vimrc@jlab1
+```
+
+
 ## Basic Usage
 
 You can modify the contents of this psuedo vimrc by editing the settings using Settings > Advanced Settings Editor (Ctrl+,) and selecting the settings for `vimrc`. Commands are defined as arrays with the syntax:
-[lhs, rhs]. For example you can map `ii` to `<Esc>` in insert mode and use `cp` to copy a paragraph by adding the following to the settings:
+[lhs, rhs]. For example you can map `ii` to `<Esc>` in insert mode by adding the following to the settings:
 ```json
 {
 "imap": 
@@ -41,14 +48,16 @@ The comment for the `noremap` function in [`codemirror/keymap/vim.js`](https://g
 > NOTE: This will not create mappings to key maps that aren't present in the default key map. See TODO at bottom of function.
 
 My reading of this comment and looking through the actual function leads me to believe that the restrictions are:
-1. The right hand side of the mapping must be defined in the default vim.js keymap
-2. The default keymap must not be an [Ex/Key]to[Ex/Key] mapping.
+1. The right hand side of the mapping must be defined in the [default vim.js keymap](https://github.com/codemirror/CodeMirror/blob/91cb2943208f7fa34ba125ea2ef30582ea601f32/keymap/vim.js#L47)
+2. The default keymap must not be an [Ex to Ex] or [Key to Key]  mapping.
 
 The result will then be that you have changed the `lhs` for the default keymapping but nothing else. If your mapping doesn't meet these conditions then the mapping will not be performed and this extension will put an error message in the console. So it may be in your best interest to just use the map commands and be careful to not get caught in infinite mapping loops.
 
 ## Requirements
 
 * JupyterLab >= 2.0
+or
+* JupyterLab >= 1.0 < 2.0
 
 
 
