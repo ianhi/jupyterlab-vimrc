@@ -3,6 +3,9 @@
 ![Github Actions Status](https://github.com/ianhi/jupyterlab-vimrc/workflows/Build/badge.svg)
 
 add a basic vimrc to jupyterlab  
+I also recommend:
+- https://github.com/ianhi/jupyterlab_vim-system-clipboard-support (yank to + or * registers)
+- https://github.com/axelfahy/jupyterlab-vim (vim in the notebook)
 
 ## Install
 
