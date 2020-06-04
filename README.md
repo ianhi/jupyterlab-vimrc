@@ -12,7 +12,7 @@ jupyter labextension install jupyterlab-vimrc
 ## Basic Usage
 
 You can modify the contents of this psuedo vimrc by editing the settings using Settings > Advanced Settings Editor (Ctrl+,) and selecting the settings for `vimrc`. Commands are defined as arrays with the syntax:
-[lhs, rhs]. For example you can map `ii` to `<Esc>` in insert mode and use `cp` to copy a paragraph by adding the following to the settings:
+[lhs, rhs]. For example you can map `ii` to `<Esc>` in insert mode by adding the following to the settings:
 ```json
 {
 "imap": 
