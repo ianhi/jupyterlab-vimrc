@@ -60,7 +60,7 @@ The result will then be that you have changed the `lhs` for the default keymappi
 
 * JupyterLab >= 2.0
 or
-* JupyterLab >= 1.0 < 2.0
+* JupyterLab >= 1.0 (jupyter labextension install jupyterlab-vimrc@jlab1)
 
 
 
