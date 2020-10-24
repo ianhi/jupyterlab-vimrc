@@ -1,11 +1,9 @@
-import * as CodeMirror from 'codemirror';
-import 'codemirror/keymap/vim.js';
-
 import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 
+import { ICodeMirror } from '@jupyterlab/codemirror';
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
 
 const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
@@ -16,9 +14,14 @@ const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
 const extension: JupyterFrontEndPlugin<void> = {
   id: PLUGIN_ID,
   autoStart: true,
-  requires: [ISettingRegistry],
-  activate: (app: JupyterFrontEnd, settings: ISettingRegistry) => {
-    const cm = CodeMirror as any;
+  requires: [ISettingRegistry, ICodeMirror],
+  activate: async (
+    app: JupyterFrontEnd,
+    settings: ISettingRegistry,
+    jlabCodeMirror: ICodeMirror
+  ) => {
+    await jlabCodeMirror.ensureVimKeymap();
+    const cm = jlabCodeMirror.CodeMirror as any;
 
     /**
      * Load the settings for this extension

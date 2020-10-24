@@ -1,0 +1,23 @@
+include LICENSE
+include README.md
+include pyproject.toml
+include jupyter-config/jupyterlab-vimrc.json
+
+include package.json
+include ts*.json
+
+graft jupyterlab-vimrc/static
+
+# Javascript files
+graft src
+graft style
+graft schema
+prune **/node_modules
+prune lib
+
+# Patterns to exclude from any directory
+global-exclude *~
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude .git
+global-exclude .ipynb_checkpoints
