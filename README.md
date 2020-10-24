@@ -10,12 +10,12 @@ I also recommend:
 ## Install
 
 ```bash
-jupyter labextension install jupyterlab-vimrc
+pip install jupyterlab-vimrc
 ```
 
-or for jupyterlab=1
+or for jupyterlab=2
 ```bash
-jupyter labextension install jupyterlab-vimrc@jlab1
+jupyter labextension install jupyterlab-vimrc@0.3.0
 ```
 
 
@@ -58,9 +58,9 @@ The result will then be that you have changed the `lhs` for the default keymappi
 
 ## Requirements
 
-* JupyterLab >= 3.0
-* JupyterLab >= 2.0 (`jupyter labextension install jupyterlab-vimrc)
-* JupyterLab >= 1.0 (jupyter labextension install jupyterlab-vimrc@jlab1)
+* JupyterLab >= 3.0 (`pip install jupyterlab-vimrc`)
+* JupyterLab >= 2.0 (`jupyter labextension install jupyterlab-vimrc@0.3.0`)
+* JupyterLab >= 1.0 (`jupyter labextension install jupyterlab-vimrc@jlab1`)
 
 
 
