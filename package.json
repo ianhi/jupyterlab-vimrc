@@ -43,8 +43,8 @@
     "watch:labextension": "jupyter labextension watch ."
   },
   "dependencies": {
-    "@jupyterlab/application": ">=3.0.0-rc.5",
-    "@jupyterlab/codemirror": "file:../jupyterlab/packages/codemirror"
+    "@jupyterlab/application": ">=3.0.0-rc.6",
+    "@jupyterlab/codemirror": ">=3.0.0-rc.6"
   },
   "devDependencies": {
     "@jupyterlab/builder": ">=3.0.0-rc.2",
