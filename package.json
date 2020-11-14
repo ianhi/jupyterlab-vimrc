@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-vimrc",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "add a basic vimrc to jupyterlab",
   "keywords": [
     "jupyter",

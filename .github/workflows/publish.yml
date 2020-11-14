@@ -23,7 +23,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install jupyterlab packaging setuptools twine wheel jupyter_packaging
+        pip install setuptools wheel
+        pip install --upgrade --pre jupyterlab
+        pip install packaging twine jupyter_packaging
     - name: Publish the Python package
       env:
         TWINE_USERNAME: __token__
