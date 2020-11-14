@@ -2,14 +2,16 @@
 
 ![Github Actions Status](https://github.com/ianhi/jupyterlab-vimrc/workflows/Build/badge.svg)
 
-add a basic vimrc to jupyterlab  
+add a basic vimrc to jupyterlab  + support for yanking to the system clipboard.
+
 I also recommend:
-- https://github.com/ianhi/jupyterlab_vim-system-clipboard-support (yank to + or * registers)
 - https://github.com/axelfahy/jupyterlab-vim (vim in the notebook)
+- ~~https://github.com/ianhi/jupyterlab_vim-system-clipboard-support (yank to + or * registers)~~ (Now included in this extension!)
 
 ## Install
 
 ```bash
+# for jlab 3+
 pip install jupyterlab-vimrc
 ```
 
