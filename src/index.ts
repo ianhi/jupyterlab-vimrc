@@ -5,6 +5,7 @@ import {
 
 import { ICodeMirror } from '@jupyterlab/codemirror';
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
+import { yankGenerator } from './yank';
 
 const PLUGIN_ID = 'jupyterlab-vimrc:vimrc';
 
@@ -29,6 +30,12 @@ const extension: JupyterFrontEndPlugin<void> = {
      * @param setting Extension settings
      */
     function loadSetting(setting: ISettingRegistry.ISettings): void {
+      const unnamedplus = setting.get('unnamedplus').composite as boolean;
+      cm.Vim.defineOperator(
+        'yank',
+        yankGenerator(cm.Vim.getRegisterController(), unnamedplus)
+      );
+
       // clear any previously set settings
       cm.Vim.mapclear('normal');
       cm.Vim.mapclear('visual');
