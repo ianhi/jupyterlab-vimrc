@@ -6,7 +6,7 @@ add a basic vimrc to jupyterlab  + support for yanking to the system clipboard.
 
 I also recommend:
 - https://github.com/axelfahy/jupyterlab-vim (vim in the notebook)
-- ~~https://github.com/ianhi/jupyterlab_vim-system-clipboard-support (yank to + or * registers)~~ (Now included in this extension!)
+- ~~https://github.com/ianhi/jupyterlab_vim-system-clipboard-support (yank to + or * registers)~~ (Included in this extension for jlab3! - still necessary for jlab2)
 
 ## Install
 
