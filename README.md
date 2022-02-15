@@ -33,7 +33,7 @@ You can modify the contents of this psuedo vimrc by editing the settings using S
     ],
 }
 ```
-See the [Examples](EXAMPLES.md) for other premade settings files such as `hjkl` -> `jkl;`
+Note that the key names are case sensitive; `<ESC>` will not work. See the [Examples](EXAMPLES.md) for other premade settings files such as `hjkl` -> `jkl;`
 
 ## Supported Commands
 Currently supports these commands:
